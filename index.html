@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MMU University | Priyanshu Kumar</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#f3f6fc;color:#202b3c}
+header{background:linear-gradient(120deg,#04172e,#0b4778);color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:75px;height:75px;object-fit:contain;background:white;border-radius:50%;padding:4px}
+.brand h2{font-size:16px;line-height:1.4}.brand p{font-size:12px;margin-top:4px;color:#dce8f7}
+.creator{text-align:center;color:#ffc857;font-weight:bold}.creator small{display:block;color:white;font-weight:normal;margin-bottom:5px}
+nav{display:flex;gap:5px;flex-wrap:wrap}
+button,.btn{border:0;border-radius:6px;padding:11px 15px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+nav button{background:transparent;color:white}nav button:hover{background:#ffc857;color:#06254a}
+.page{display:none;min-height:65vh}.page.active{display:block}
+.hero{min-height:420px;padding:65px 8%;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#06254af2,#06254a50),url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=85');background-size:cover;background-position:center}
+.hero-content{max-width:650px}.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.2;margin:15px 0}.hero h1 span{color:#ffc857}.hero p{line-height:1.8;margin-bottom:20px}
+.primary{background:#ffc857;color:#06254a;margin:4px}.secondary{background:transparent;border:1px solid white;color:white;margin:4px}
+section{padding:45px 7%}.section-title{text-align:center;font-size:30px;color:#082b55;margin-bottom:12px}.subtitle{text-align:center;color:#68768a;line-height:1.7;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;padding:24px;border-radius:12px;box-shadow:0 5px 20px #0000000c;transition:.25s}.card:hover{transform:translateY(-4px)}
+.card h3{color:#0b497b;margin-bottom:12px}.card p{line-height:1.7;color:#59677a;margin-bottom:14px}.card button{background:#0b5488;color:white}
+.emoji{font-size:36px;margin-bottom:12px}.feature{text-align:center}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;align-items:center}
+.campus-img{width:100%;height:270px;object-fit:cover;border-radius:12px}
+.page-content{padding:35px 7%}.back{background:#e4eaf2;color:#082b55;margin-bottom:25px}
+.question{background:white;padding:18px;border-radius:9px;margin:14px 0;box-shadow:0 3px 12px #00000008}
+.question h3{color:#0b497b;font-size:17px;margin-bottom:12px}.question button{background:#e6f1fc;color:#082b55}
+.answer{display:none;line-height:1.8;padding-top:12px;color:#4d5c70}.answer.show{display:block}
+input,textarea,select{width:100%;padding:12px;margin:8px 0 16px;border:1px solid #ccd5e0;border-radius:6px;font-size:15px}
+label{font-weight:bold;color:#082b55}
+.admission-banner{background:linear-gradient(120deg,#06254a,#0b5488);color:white;text-align:center}
+.admission-banner h2{font-size:30px;margin-bottom:15px}.admission-banner p{line-height:1.8;margin-bottom:20px}
+.notice{background:#fff4d6;padding:14px;border-radius:7px;line-height:1.7}
+footer{background:#04172e;color:white;text-align:center;padding:28px 15px;line-height:2}footer strong{color:#ffc857}footer a{color:#ffc857}
+@media(max-width:650px){header{justify-content:center;text-align:center}.brand{justify-content:center}.brand h2{font-size:13px}.logo{width:58px;height:58px}nav{justify-content:center}.hero{padding:45px 6%}section,.page-content{padding:30px 6%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img class="logo" src="https://www.mmumullana.co.in/favicon.ico" alt="MMU University Logo"
+         onerror="this.onerror=null;this.src='https://www.mmumullana.in/favicon.ico'">
+    <div><h2>MAHARISHI MARKANDESHWAR<br>UNIVERSITY</h2><p>Mullana, Ambala, Haryana</p></div>
+  </div>
+  <div class="creator"><small>Website Created By</small>Priyanshu Kumar</div>
+  <nav>
+    <button onclick="showPage('home')">Home</button><button onclick="showPage('about')">About</button>
+    <button onclick="showPage('courses')">Courses</button><button onclick="showPage('admission')">Admission</button>
+    <button onclick="showPage('faq')">FAQ</button><button onclick="showPage('contact')">Contact</button>
+  </nav>
+</header>
+
+<div id="home" class="page active">
+  <div class="hero"><div class="hero-content">
+    <p>WELCOME TO</p><h1>Maharishi Markandeshwar <span>University</span></h1>
+    <p>Discover education, technology, innovation and opportunities for a brighter future.</p>
+    <button class="primary" onclick="showPage('courses')">Explore Courses →</button>
+    <button class="secondary" onclick="showPage('about')">Learn More</button>
+  </div></div>
+  <section>
+    <h2 class="section-title">Why Explore MMU?</h2><p class="subtitle">Education, knowledge and student development.</p>
+    <div class="grid">
+      <div class="card feature"><div class="emoji">📚</div><h3>Academic Learning</h3><p>Explore academic fields and educational opportunities.</p></div>
+      <div class="card feature"><div class="emoji">💻</div><h3>Technology</h3><p>Discover computing, programming and digital skills.</p></div>
+      <div class="card feature"><div class="emoji">🔬</div><h3>Innovation</h3><p>Explore research, ideas and practical problem-solving.</p></div>
+      <div class="card feature"><div class="emoji">🤝</div><h3>Campus Life</h3><p>Learn about teamwork and student activities.</p></div>
+    </div>
+  </section>
+  <section style="background:#eaf1fa">
+    <h2 class="section-title">About Our University</h2><p class="subtitle">Knowledge | Character | Progress</p>
+    <div class="about-grid">
+      <img class="campus-img" src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85" alt="University campus">
+      <div class="card"><h3>Maharishi Markandeshwar University</h3><p>Maharishi Markandeshwar (Deemed to be University), Mullana-Ambala, Haryana, offers academic programmes in areas including engineering, medical sciences, pharmacy, nursing and management.</p><button onclick="showPage('about')">Read More →</button></div>
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title">Explore Website Pages</h2><p class="subtitle">Click a card to open its page.</p>
+    <div class="grid">
+      <div class="card"><div class="emoji">🏫</div><h3>About University</h3><p>University introduction and website objectives.</p><button onclick="showPage('about')">Open Page</button></div>
+      <div class="card"><div class="emoji">🎓</div><h3>Courses</h3><p>Explore different academic study areas.</p><button onclick="showPage('courses')">Open Page</button></div>
+      <div class="card"><div class="emoji">❓</div><h3>Questions & Answers</h3><p>Read answers to common questions.</p><button onclick="showPage('faq')">Open Page</button></div>
+      <div class="card"><div class="emoji">✉️</div><h3>Contact</h3><p>Open the sample enquiry form.</p><button onclick="showPage('contact')">Open Page</button></div>
+    </div>
+  </section>
+  <section class="admission-banner"><h2>Plan Your Academic Future</h2><p>Check programmes and admission information through the official website.</p><button class="primary" onclick="showPage('admission')">Admission Information →</button></section>
+</div>
+
+<div id="about" class="page page-content">
+  <button class="back" onclick="showPage('home')">← Back to Home</button><h2 class="section-title">About MMU</h2><p class="subtitle">University Introduction</p>
+  <div class="card"><h3>About the Institution</h3><p>Maharishi Markandeshwar (Deemed to be University) is located in Mullana-Ambala, Haryana, India. It provides programmes in multiple academic disciplines.</p>
+  <h3>Objectives of This Website</h3><p>• Share basic university information.</p><p>• Present different academic study areas.</p><p>• Offer interactive questions and answers.</p><p>• Demonstrate navigation using HTML, CSS and JavaScript.</p><br>
+  <a class="btn" style="background:#0b5488;color:white" href="https://www.mmumullana.co.in/" target="_blank" rel="noopener">Official University Website ↗</a></div>
+</div>
+
+<div id="courses" class="page page-content">
+  <button class="back" onclick="showPage('home')">← Back to Home</button><h2 class="section-title">Academic Study Areas</h2><p class="subtitle">Click Learn More to view a description.</p>
+  <div class="grid">
+    <div class="card"><div class="emoji">💻</div><h3>Computer Science & IT</h3><p>Programming, AI, databases, cybersecurity and web development.</p><button onclick="showDetail('Computer Science & IT','Computer Science includes programming, algorithms, databases, networking, AI and software development.')">Learn More</button></div>
+    <div class="card"><div class="emoji">⚙️</div><h3>Engineering</h3><p>Technology, design, systems and problem-solving.</p><button onclick="showDetail('Engineering','Engineering applies scientific and mathematical principles to design and improve systems, products and technology.')">Learn More</button></div>
+    <div class="card"><div class="emoji">🩺</div><h3>Medical Sciences</h3><p>Education related to healthcare and medical disciplines.</p><button onclick="showDetail('Medical Sciences','Medical sciences cover healthcare-related study, human health, diagnosis and treatment.')">Learn More</button></div>
+    <div class="card"><div class="emoji">💊</div><h3>Pharmacy</h3><p>Medicines, pharmaceutical science and patient care.</p><button onclick="showDetail('Pharmacy','Pharmacy studies medicines, their preparation, use, effects and safe dispensing.')">Learn More</button></div>
+    <div class="card"><div class="emoji">📊</div><h3>Management</h3><p>Business, leadership, finance and organisational planning.</p><button onclick="showDetail('Management','Management focuses on planning, organising, leadership, strategy and decision-making.')">Learn More</button></div>
+    <div class="card"><div class="emoji">🔬</div><h3>Science</h3><p>Experiments, scientific principles and research.</p><button onclick="showDetail('Science','Science uses observation, experiments and evidence to understand the world.')">Learn More</button></div>
+  </div>
+  <div id="courseDetail" class="card" style="display:none;margin-top:24px"><h3 id="detailTitle"></h3><p id="detailText"></p></div>
+</div>
+
+<div id="admission" class="page page-content">
+  <button class="back" onclick="showPage('home')">← Back to Home</button><h2 class="section-title">Admission Information</h2><p class="subtitle">Check official information before applying.</p>
+  <div class="card"><h3>How to Explore Admissions</h3><p>1. Visit the official university website.</p><p>2. Select your preferred programme.</p><p>3. Check eligibility and required documents.</p><p>4. Confirm current fees and deadlines.</p><p>5. Follow the university's application instructions.</p><br>
+  <p class="notice">Eligibility, fees and deadlines vary by programme. Verify the latest details with the university.</p><br>
+  <a class="btn" style="background:#0b5488;color:white" href="https://www.mmumullana.co.in/" target="_blank" rel="noopener">Visit Official Website ↗</a></div>
+</div>
+
+<div id="faq" class="page page-content">
+  <button class="back" onclick="showPage('home')">← Back to Home</button><h2 class="section-title">Frequently Asked Questions</h2><p class="subtitle">Click Show Answer to reveal an answer.</p>
+  <div class="question"><h3>1. What does MMU stand for?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">MMU stands for Maharishi Markandeshwar University.</div></div>
+  <div class="question"><h3>2. Where is MMU Mullana located?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">The Mullana campus is located in Haryana, India.</div></div>
+  <div class="question"><h3>3. What is HTML?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">HTML means HyperText Markup Language. It structures webpage content.</div></div>
+  <div class="question"><h3>4. What is CSS?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">CSS means Cascading Style Sheets. It controls the appearance and layout of webpages.</div></div>
+  <div class="question"><h3>5. What is JavaScript?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">JavaScript adds interactive behaviour to webpages, such as menus and dynamic content.</div></div>
+  <div class="question"><h3>6. What is cybersecurity?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">Cybersecurity protects computers, networks and data from digital threats.</div></div>
+  <div class="question"><h3>7. What is computer science?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">Computer science studies computation, algorithms, programming and information systems.</div></div>
+  <div class="question"><h3>8. How do I find admission details?</h3><button onclick="toggleAnswer(this)">Show Answer</button><div class="answer">Visit the official university website to check current programmes, eligibility, fees and application deadlines.<br><br><a href="https://www.mmumullana.co.in/" target="_blank" rel="noopener">Open Official Website ↗</a></div></div>
+</div>
+
+<div id="contact" class="page page-content">
+  <button class="back" onclick="showPage('home')">← Back to Home</button><h2 class="section-title">Contact / Enquiry Form</h2><p class="subtitle">Fill out this demo form.</p>
+  <div class="card"><form id="contactForm">
+    <label for="name">Your Name</label><input id="name" required placeholder="Enter your name">
+    <label for="email">Email Address</label><input id="email" type="email" required placeholder="Enter your email">
+    <label for="topic">Enquiry Topic</label><select id="topic"><option>Course Information</option><option>Admission Information</option><option>University Information</option><option>Other</option></select>
+    <label for="message">Your Question</label><textarea id="message" rows="4" required placeholder="Write your question here"></textarea>
+    <button class="primary" type="submit">Submit Enquiry</button>
+  </form><p id="formResult" style="line-height:1.7;margin-top:15px"></p><p class="notice" style="margin-top:15px">This is a demo form. It does not send information to the university.</p></div>
+</div>
+
+<footer>
+  <p><strong>Maharishi Markandeshwar University</strong></p>
+  <p>Educational Website Project</p><p>Designed & Developed By: <strong>Priyanshu Kumar</strong></p>
+  <p>HTML | CSS | JavaScript</p>
+  <p><a href="https://www.mmumullana.co.in/" target="_blank" rel="noopener">Official University Website</a></p>
+</footer>
+
+<script>
+function showPage(pageId){
+  document.querySelectorAll(".page").forEach(function(page){page.classList.remove("active")});
+  document.getElementById(pageId).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function toggleAnswer(button){
+  const answer=button.nextElementSibling;
+  answer.classList.toggle("show");
+  button.textContent=answer.classList.contains("show")?"Hide Answer":"Show Answer";
+}
+function showDetail(title,description){
+  document.getElementById("detailTitle").textContent=title;
+  document.getElementById("detailText").textContent=description;
+  const detail=document.getElementById("courseDetail");
+  detail.style.display="block";
+  detail.scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.getElementById("contactForm").addEventListener("submit",function(event){
+  event.preventDefault();
+  const name=document.getElementById("name").value;
+  const topic=document.getElementById("topic").value;
+  document.getElementById("formResult").textContent=
+    "Thank you, "+name+"! Your demo enquiry about "+topic+
+    " has been prepared. It has not been sent to the university.";
+});
+</script>
+</body>
+</html>
